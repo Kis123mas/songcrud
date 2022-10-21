@@ -1,3 +1,5 @@
+# this page is stil under construction for the models and attribute
+
 from django.db import models
 from datetime import datetime
 
