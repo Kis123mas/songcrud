@@ -14,8 +14,8 @@ class Song(models.Model):
     #attribute for song
     Artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE) #An Artiste can have multiple songs and  song must only belong to one Artiste.
     date_released = models.DateField(default=datetime.today)
-    likes = models.ManyToManyField()
-    artiste_id =
+    # likes = models.ManyToManyField()
+    # artiste_id =
 
 
 class Lyric(models.Model):
@@ -23,5 +23,5 @@ class Lyric(models.Model):
     #attribute for lyrics
     content = models.CharField(max_length=5000)
 
-    song_id =
+    # song_id =
     
