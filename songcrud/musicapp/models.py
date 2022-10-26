@@ -1,29 +1,37 @@
-# this page is stil under construction for the models and attribute
-
 from django.db import models
 from datetime import datetime
 
 
-# Creating (3)models Artiste, Song and Lyrics here.
+#Creating (3)models Artiste, Song and Lyrics here.
 class Artiste(models.Model):
-    # attribute for artiste
-    first_name = models.CharField(max_length=400)
-    last_name = models.CharField(max_length=400)
+    # class attribute for artiste
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
     age = models.IntegerField()
 
+    def __str__(self):
+        return (self.first_name)    #specifing string method
+
+    
 
 class Song(models.Model):
-    #attribute for song
-    Artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE) #An Artiste can have multiple songs and  song must only belong to one Artiste.
+    # class attribute for song
+    artiste = models.ForeignKey("Artiste", on_delete=models.CASCADE)
+    title =models.CharField(max_length=100)
     date_released = models.DateField(default=datetime.today)
-    # likes = models.ManyToManyField()
-    # artiste_id =
+    likes = models.IntegerField()
+    artiste_Id = models.IntegerField()
+    
+    def __str__(self):
+        return (self.title) #specifing string method
 
 
 class Lyric(models.Model):
-    Song = models.ForeignKey(Song, on_delete=models.CASCADE) #song having multiple lyrics and a lyric must only belong to a song.
-    #attribute for lyrics
-    content = models.CharField(max_length=5000)
+    song = models.ForeignKey("Song", on_delete=models.CASCADE)
+    content = models.TextField() #attribute for lyrics
+    song_Id = models.IntegerField()
+    
 
-    # song_id =
+    def __str__(self):
+        return(self.song)    #specifing string method
     
