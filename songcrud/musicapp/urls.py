@@ -16,8 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from .views import ListArtiste, DetailArtiste, ListSong, DetailSong, ListLyric, DetailLyric
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name = "index")
+    path('', views.index, name = "index"),
+
+    path('artiste', ListArtiste.as_view(), name='artiste'),
+    path('artiste/<int:pk>/', DetailArtiste.as_view(), name=''),
+
+    path('song', ListSong.as_view(), name='song'),
+    path('song/<int:pk>/', DetailSong.as_view(), name=''),
+
+    path('lyric', ListLyric.as_view(), name='lyric'),
+    path('lyric/<int:pk>/', DetailLyric.as_view(), name=''),
 ]

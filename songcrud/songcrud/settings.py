@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #created by Emmanuel
     'musicapp',
+    #framework added by Emmanuel
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
