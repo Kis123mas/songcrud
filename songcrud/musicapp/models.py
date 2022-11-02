@@ -17,11 +17,10 @@ class Artiste(models.Model):
 
 class Song(models.Model):
     # class attribute for song
-    artiste = models.ForeignKey("Artiste", on_delete=models.CASCADE)
+    artiste_id = models.ForeignKey("Artiste", on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     date_released = models.DateField(default=datetime.today)
     likes = models.IntegerField()
-    artiste_Id = models.IntegerField()
     
 
     def __str__(self):
@@ -30,9 +29,8 @@ class Song(models.Model):
 
 class Lyric(models.Model):
     #attribute for lyrics
-    song = models.ForeignKey("Song", on_delete=models.CASCADE)
+    song_id = models.ForeignKey("Song", on_delete=models.CASCADE)
     content = models.TextField() 
-    song_Id = models.IntegerField()
 
     def __str__(self):
         return str(self.song)    #specifing string method

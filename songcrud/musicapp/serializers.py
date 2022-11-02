@@ -16,11 +16,10 @@ class ArtisteSerializer(serializers.ModelSerializer):
 class SongSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
-            'artiste',
+            'artiste_id',
             'title',
             'date_released',
             'likes',
-            'artiste_Id'
         )
         model = Song
 
@@ -28,8 +27,7 @@ class SongSerializer(serializers.ModelSerializer):
 class LyricSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
-            'song',
+            'song_id',
             'content',
-            'song_Id'
         )
         model = Lyric
