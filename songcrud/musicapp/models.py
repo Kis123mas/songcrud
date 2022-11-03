@@ -33,5 +33,5 @@ class Lyric(models.Model):
     content = models.TextField() 
 
     def __str__(self):
-        return str(self.song)    #specifing string method
+        return str(self.song_id)    #specifing string method
     

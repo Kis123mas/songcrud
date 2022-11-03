@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from rest_framework import generics
 from .models import Artiste, Song, Lyric
-from .serializers import ArtisteSerializer, SongSerializer, LyricSerializer
+from .serializers import ArtisteSerializer, SongSerializer
 
 # Create your views here.
 
@@ -28,10 +28,10 @@ class DetailSong(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = SongSerializer
 
 
-class ListLyric(generics.ListCreateAPIView):
-    queryset = Lyric.objects.all()
-    serializer_class = LyricSerializer
+# class ListLyric(generics.ListCreateAPIView):
+#     queryset = Lyric.objects.all()
+#     serializer_class = LyricSerializer
 
-class DetailLyric(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Lyric.objects.all()
-    serializer_class = LyricSerializer
+# class DetailLyric(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Lyric.objects.all()
+#     serializer_class = LyricSerializer
