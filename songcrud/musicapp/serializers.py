@@ -22,12 +22,3 @@ class SongSerializer(serializers.ModelSerializer):
             'likes',
         )
         model = Song
-
-
-# class LyricSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         fields = (
-#             'song_id',
-#             'content',
-#         )
-#         model = Lyric
